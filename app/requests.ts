@@ -85,7 +85,7 @@ export async function requestChat(
     model: options?.model,
   });
 
-  const res = await requestOpenaiClient("v1/chat/completions")(req);
+  const res = await requestOpenaiClient("patent/chat/completions?api-version=2023-03-15-preview")(req);
 
   try {
     const response = (await res.json()) as ChatResponse;
@@ -172,7 +172,7 @@ export async function requestChatStream(
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        path: "v1/chat/completions",
+        path: "patent/chat/completions?api-version=2023-03-15-preview",
         ...getHeaders(),
       },
       body: JSON.stringify(req),

@@ -13,6 +13,7 @@ declare global {
 
 const ACCESS_CODES = (function getAccessCodes(): Set<string> {
   const code = process.env.CODE;
+  console.log("=======", code);
 
   try {
     const codes = (code?.split(",") ?? [])
